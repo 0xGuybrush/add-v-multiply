@@ -1,66 +1,26 @@
-## Foundry
+## Add vs Multiply gas usage
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+* cf. [**Calyptus**: Solidity Challenge #436](https://x.com/calyptus_web3/status/1830818003228721437)
 
-Foundry consists of:
+## Results
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+* Ran with: `forge 0.2.0 (afd8680 2024-08-21T00:19:11.446603000Z)`
 
-## Documentation
+![results](https://github.com/0xGuybrush/add-v-multiply/blob/main/images/result.png?raw=true)
 
-https://book.getfoundry.sh/
+| src/Named.sol:Named contract |                 |     |        |     |         |
+|------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost              | Deployment Size |     |        |     |         |
+| 113253                       | 308             |     |        |     |         |
+| Function Name                | min             | avg | median | max | # calls |
+| addValues                    | 383             | 383 | 383    | 383 | 1       |
+| multipleValues               | 377             | 377 | 377    | 377 | 1       |
 
-## Usage
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+| src/Symbols.sol:Symbols contract |                 |     |        |     |         |
+|----------------------------------|-----------------|-----|--------|-----|---------|
+| Deployment Cost                  | Deployment Size |     |        |     |         |
+| 113253                           | 308             |     |        |     |         |
+| Function Name                    | min             | avg | median | max | # calls |
+| aaa                              | 361             | 361 | 361    | 361 | 1       |
+| zzz                              | 399             | 399 | 399    | 399 | 1       |
